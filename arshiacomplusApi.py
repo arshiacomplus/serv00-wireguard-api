@@ -101,13 +101,13 @@ def bind_keys():
 
   return  "address: "+'2606:4700:110:846c:e510:bfa1:ea9f:5247/128\n'+"private_key: "+priv_string+"\n"+"reserved: "+b+"\n"+ "public_key: "+'bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=' +"\n"
 def get_key():
-  data = bind_keys() 
+  data = bind_keys()
 
   
   
 
   # Create a file-like object for binary data
-  file_like_object = io.BytesIO(data.encode('utf-8')) 
+  file_like_object = io.BytesIO(data.encode('utf-8'))
   return send_file(
     file_like_object,
     mimetype='text/plain',
@@ -117,12 +117,12 @@ def get_key():
 
 @app.route("/arshiacomplus/api/wirekey")
 def replace1():
-	get_key()
+  return get_key()
 @app.route("/")
 def replace():
-	get_key()
+  return get_key()
 
 if __name__ == '__main__':
- app.run(debug=True,host="",port=0)
+ app.run(debug=True,host="host",port=0)
  
 #created by arshiacomplus
